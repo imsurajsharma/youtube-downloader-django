@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <H1>This is youtube downloader</H1>
+<div class="m-4">
+    <form class="form active-pink-4" method="post">
+        {% csrf_token %}
+        <input name="url" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+          aria-label="Search">
+       
+        <br>
+        <input type="submit" name="Download" id="">
+    </form>
+</div>
+
+<h4>{{title}}</h4>
+<br>
+<p>{{desc}}</p>
+
+<div>
+
+    <div class="row">
+        <div class="col-sm-3">
+
+            {% for r in rs %}
+           {{r}}
+            {% endfor %}
+
+        </div>
+
+        <div class="col-sm-3">
+
+            {% for ex in ext %}
+            {{ex}}
+            {% endfor %}
+        </div>
+
+        <div class="col-sm-3">
+
+            {% for s in size %}
+           {{s}} MB
+            {% endfor %}
+
+        </div>
+
+        <div class="col-sm-3">
+
+            {% for link in dl %}
+            <a href="{{link}}"  download>Download Video</a>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+<!-- javascript -->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
+
+
+</html>
