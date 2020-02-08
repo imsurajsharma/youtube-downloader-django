@@ -25,10 +25,8 @@ def downloader(request):
         for s in streams:
             streamDetails.append(s)
         
-        for l in streams:
-            response = HttpResponse(l.url,content_type='application/l.url') # mimetype is replaced by content_type for django 1.7
-            response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(l.url)        
-            links.append(response)
+        for l in streams:  
+            links.append(l.url)
             res.append(l.resolution)
             ext.append(l.extension)
             sz= round(l.get_filesize()/1000000,2)
